@@ -1,4 +1,6 @@
 # network model benchmark
+
+## 运行
 * 限定 CPU 的频率, 例如
 ```
 sudo cpupower frequency-set -g performance
