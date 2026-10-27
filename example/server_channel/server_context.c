@@ -171,7 +171,7 @@ void server_context_del_ctx(server_context_t *server_ctx,
 		LOG_INFO("on release: %s", session->remote_addr);
 
 		if (session->is_client && session->user_id != 0 &&
-			session->user_id >= sizeof(server_ctx->user_ctxs) /
+			session->user_id < sizeof(server_ctx->user_ctxs) /
 									sizeof(server_ctx->user_ctxs[0])) {
 			user_context_t *user_ctx = &server_ctx->user_ctxs[session->user_id];
 			user_context_del(user_ctx, session);
